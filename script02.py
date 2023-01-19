@@ -11,3 +11,14 @@ preencher uma lista com valores aleatorios de 0 a 99 e dividir essa lista em 4 s
 3° sublista: range(50, 74)
 4° sublista: range(75, 99)
 '''
+from random import choice
+
+dimensao = int(input('Informe o numero de elementos da lista: '))
+valores = range(1,100)
+lista = []
+
+if dimensao > 0:
+    for i in range(dimensao):
+        lista.append(choice(valores))
+        
+print(lista)
