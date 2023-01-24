@@ -21,7 +21,10 @@ if dimensao in range(0,10):
     # laço que verifica quantas vezes 0 a 9 apareceram na lista
     for j in range(0,10):
         repeticoes = lista.count(j)
-        print(f'O numero: <{j}> apareceu <{repeticoes}> vezes')
+        if repeticoes == 0: 
+            continue
+        else:
+            print(f'O numero: <{j}> apareceu <{repeticoes}> vezes')
     
     print(f'<{lista}>')
 else: 
