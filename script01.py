@@ -12,10 +12,17 @@ dimensao = int(input('Informe a dimensao da lista: '))
 
 valores_randomicos = range(1,10)
 lista = []
+repeticoes = 0
 # condição para ser positivo e estar entre 0 a 9
 if dimensao in range(0,10):
+    # laço que popula a lista com valores aleatorios
     for i in range(dimensao):
         lista.append(choice(valores_randomicos))
-    print(lista)
+    # laço que verifica quantas vezes 0 a 9 apareceram na lista
+    for j in range(0,10):
+        repeticoes = lista.count(j)
+        print(f'O numero: <{j}> apareceu <{repeticoes}> vezes')
+    
+    print(f'<{lista}>')
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
