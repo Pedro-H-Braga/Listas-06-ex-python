@@ -13,12 +13,41 @@ preencher uma lista com valores aleatorios de 0 a 99 e dividir essa lista em 4 s
 '''
 from random import choice
 
-dimensao = int(input('Informe o numero de elementos da lista: '))
-valores = range(1,100)
-lista = []
+print('<<Informar a baixo numeros inteiros e positivos>>')
+dimensao = int(input('Informe a dimensao da lista: '))
+# definindo ranges que cada quartil terá
+sublista1          = range(0,24)
+sublista2          = range(25, 49)
+sublista3          = range(50, 74)
+sublista4          = range(75, 99)
 
-if dimensao > 0:
+lista_sublista1    = []
+lista_sublista2    = []
+lista_sublista3    = []
+lista_sublista4    = []
+
+valores_randomicos = range(1,100)
+repeticoes         = 0
+numero_randomicos  = []
+
+# condição para ser positivo e estar entre 0 a 9
+if dimensao in range(0,10):
+    # laço que popula a lista com valores aleatorios
     for i in range(dimensao):
-        lista.append(choice(valores))
-        
-print(lista)
+        numero_randomicos.append(choice(valores_randomicos))
+    # laço que verifica quantas vezes 0 a 9 apareceram na lista
+    for j in range(1,100):
+        repeticoes = numero_randomicos.count(j)
+        if repeticoes == 0: 
+            continue
+        else:
+            # se tiver o numero na lista veja em qual quartil ele se encaixa e adicione ele a lista
+            match repeticoes:
+                case sublista1:
+                    lista_sublista1 += repeticoes
+
+            print(f'O numero: <{j}> apareceu <{repeticoes}> vezes')
+    
+    print(f'<{numero_randomicos}>')
+else: 
+    print('<<VALOR INFORMADO É INVÁLIDO>>')
