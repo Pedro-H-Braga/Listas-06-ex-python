@@ -36,7 +36,7 @@ if dimensao in range(0,10):
     for i in range(dimensao):
         numero_randomicos.append(choice(valores_randomicos))
     # laço que verifica quantas vezes 0 a 9 apareceram na lista
-    for j in range(1,100):
+    for j in range(0,100):
         repeticoes = numero_randomicos.count(j)
         if repeticoes == 0: 
             continue
@@ -44,9 +44,9 @@ if dimensao in range(0,10):
             # se tiver o numero na lista veja em qual quartil ele se encaixa e adicione ele a lista
             match repeticoes:
                 case sublista1:
-                    lista_sublista1 += repeticoes
+                    lista_sublista1.append(repeticoes)
 
-            print(f'O numero: <{j}> apareceu <{repeticoes}> vezes')
+            print(f'O numero: <{lista_sublista1}> apareceu <{repeticoes}> vezes')
     
     print(f'<{numero_randomicos}>')
 else: 

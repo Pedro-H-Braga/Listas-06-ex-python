@@ -10,7 +10,7 @@ from random import choice
 print('<<Informar a baixo numeros inteiros e positivos>>')
 dimensao = int(input('Informe a dimensao da lista: '))
 
-valores_randomicos = range(1,10)
+valores_randomicos = range(0,10)
 lista = []
 repeticoes = 0
 # condição para ser positivo e estar entre 0 a 9
