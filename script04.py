@@ -1,5 +1,6 @@
 '''
-Q 3 usando sorted
+Refaça a questão 3, dessa vez usando o método de ordenação de lista (SORT() ou SORTED()), sendo
+que a ordenação agora deverá ser decrescente.
 
 '''
 from random import choice
