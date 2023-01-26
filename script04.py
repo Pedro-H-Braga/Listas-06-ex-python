@@ -17,9 +17,9 @@ if dimensao > 0:
     for i in range(dimensao):
         numero_randomicos.append(choice(valores_randomicos))
     print(f'LISTA ORIGINAL: <{numero_randomicos}>')
-
+    # ordenando de forma crescente
     numero_randomicos.sort()
-    print(f'LISTA CRESCENTE: <{numero_randomicos}>')
+    # ordenando de forma decrescente
     numero_randomicos = numero_randomicos[::-1]
     print(f'LISTA DECRESCENTE: <{numero_randomicos}>')
 
