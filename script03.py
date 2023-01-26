@@ -21,14 +21,17 @@ if dimensao > 0:
     # laço que popula a lista com valores aleatorios
     for i in range(dimensao):
         numero_randomicos.append(choice(valores_randomicos))
-        valor_lista_original = numero_randomicos[i]
-        posicao_lista_original = i
-        
-        if  valor_lista_original <:
-            lista_ordenada.append(numero_randomicos[i])
+    for numero in numero_randomicos:
+        for chave, valor in enumerate(lista_ordenada):
+            if numero < valor:
+                lista_ordenada.insert(chave, numero)
+                break
+        else:
+            lista_ordenada.append(numero)
 
     print(f'LISTA ORIGINAL: <{numero_randomicos}>')
-
+    print(f'LISTA ORDENADA: <{lista_ordenada}>')
+'''
     for posicao_anterior,j in enumerate(numero_randomicos):
         if posicao_anterior == 0:
             posicao_anterior += 1
@@ -42,3 +45,4 @@ if dimensao > 0:
         print(f'LISTA ORDENADA: <{lista_ordenada}>')
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
+'''    
