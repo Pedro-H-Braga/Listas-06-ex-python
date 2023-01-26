@@ -21,33 +21,37 @@ sublista2          = range(25, 49)
 sublista3          = range(50, 74)
 sublista4          = range(75, 99)
 
-lista_sublista1    = []
-lista_sublista2    = []
-lista_sublista3    = []
-lista_sublista4    = []
+quartil1   = []
+quartil2    = []
+quartil3    = []
+quartil4   = []
 
 valores_randomicos = range(1,100)
 repeticoes         = 0
 numero_randomicos  = []
 
 # condição para ser positivo e estar entre 0 a 9
-if dimensao in range(0,10):
+if dimensao > 0:
     # laço que popula a lista com valores aleatorios
     for i in range(dimensao):
         numero_randomicos.append(choice(valores_randomicos))
-    # laço que verifica quantas vezes 0 a 9 apareceram na lista
-    for j in range(0,100):
-        repeticoes = numero_randomicos.count(j)
-        if repeticoes == 0: 
-            continue
-        else:
-            # se tiver o numero na lista veja em qual quartil ele se encaixa e adicione ele a lista
-            match repeticoes:
-                case sublista1:
-                    lista_sublista1.append(repeticoes)
-
-            print(f'O numero: <{lista_sublista1}> apareceu <{repeticoes}> vezes')
+     
+    for k in numero_randomicos:
+        # se tiver o numero na lista veja em qual quartil ele se encaixa e adicione ele a lista
+        if k in range(0,25):
+            quartil1.append(k)
+        elif k in range(25, 49):
+            quartil2.append(k)
+        elif k in range(50, 74):
+            quartil3.append(k)
+        elif k in range(75, 99):
+            quartil4.append(k)
+        
+    print(f'PRIMEIRO QUARTIL: <{quartil1}>')
+    print(f'SEGUNDO QUARTIL: <{quartil2}>')
+    print(f'TERCEIRO QUARTIL: <{quartil3}>')
+    print(f'QUARTO QUARTIL: <{quartil4}>')
     
-    print(f'<{numero_randomicos}>')
+    print(f'LISTA COMPLETA: <{numero_randomicos}>')
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
