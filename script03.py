@@ -31,18 +31,6 @@ if dimensao > 0:
 
     print(f'LISTA ORIGINAL: <{numero_randomicos}>')
     print(f'LISTA ORDENADA: <{lista_ordenada}>')
-'''
-    for posicao_anterior,j in enumerate(numero_randomicos):
-        if posicao_anterior == 0:
-            posicao_anterior += 1
-        posicao_anterior -= 1
-        numero_anterior = numero_randomicos[posicao_anterior]
-        if j < numero_anterior:
-            lista_ordenada.insert(posicao_anterior, j)
-        else:
-            lista_ordenada.append(j)
-        
-        print(f'LISTA ORDENADA: <{lista_ordenada}>')
+
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
-'''    
