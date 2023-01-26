@@ -19,8 +19,9 @@ if dimensao > 0:
     print(f'LISTA ORIGINAL: <{numero_randomicos}>')
 
     numero_randomicos.sort()
-
-    print(f'LISTA ORDENADA: <{numero_randomicos}>')
+    print(f'LISTA CRESCENTE: <{numero_randomicos}>')
+    numero_randomicos = numero_randomicos[::-1]
+    print(f'LISTA DECRESCENTE: <{numero_randomicos}>')
 
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
