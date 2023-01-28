@@ -7,32 +7,46 @@ statistics.py):
 c) A variância populacional dos valores dos elementos da lista
 
 '''
-import random
+from random import choice
 print('<<Informar a baixo numeros inteiros e positivos>>')
 dimensao = int(input('Informe a dimensao da lista: '))
 
-mediana            = 0
+valores_randomicos = range(1,100)
+
+v_desvio           = 0
+somatorio_media    = 0
+somatorio_variancia= 0
 posicao_mediana    = 0
+
 numero_randomicos  = []
 lista_ordenada     = []
+lista_desvios      = []
 
 # condição para ser positivo e estar entre 0 a 9
 if dimensao > 0:
-    # laço que popula a lista com valores aleatorios
+    # laço que popula a lista com valores aleatorios floats
     for i in range(dimensao):
-        numero_randomicos.append(round(random.uniform(0.00, 99.99), 2))
-
-    for numero in numero_randomicos:
-        for chave, valor in enumerate(lista_ordenada):
-            if numero < valor:
-                lista_ordenada.insert(chave, numero)
-                break
-        else:
-            lista_ordenada.append(numero)
+        numero_randomicos.append(choice(valores_randomicos))
+ 
+    for i in numero_randomicos:     
+        ''' MEDIA '''
+        # Somatorio dos numeros divido pela quantidade de elementos
+        somatorio_media += i
+    media = somatorio_media/dimensao
     
-    posicao_mediana = int(dimensao/2)
-    mediana = lista_ordenada[posicao_mediana]
-    print(f'LISTA ORIGINAL: <{lista_ordenada}>')
-    print(f'A mediana dos valores sao: <{mediana}>')
+    for j in numero_randomicos:     
+        ''' DESVIOS '''
+        # cada elemento menos a media, gerará uma lista de numeros
+        lista_desvios.append(j-media)
+    for k in lista_desvios:     
+        ''' VARIANCIA '''
+        # o somatório de cada desvio elevado ao quadrado e dividido pela quantidade de elementos
+        somatorio_variancia += (k ** 2)
+    
+    variancia = somatorio_variancia / dimensao    
+
+
+    print(f'LISTA ORIGINAL: <{numero_randomicos}>')
+    print(f'A variancia dos valores sao: <{variancia}>')
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
