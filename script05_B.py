@@ -1,7 +1,7 @@
 '''
 Fazer um programa para gerar automaticamente uma lista de dimensão de n elementos (n deverá ser
 solicitado ao usuário e ser positivo), com os elementos na faixa dos números inteiros entre 0 e 99
-(inclusive), gerados aleatoriamente. Determinar (usar laço de repetição – NÃO USAR a biblioteca
+(inclusive), gerados aleatoriamente. Determinar (usar laço de repetição - NÃO USAR a biblioteca
 statistics.py):
 
 b) A mediana dos valores dos elementos da lista
@@ -37,6 +37,6 @@ if dimensao > 0:
     posicao_mediana = int(dimensao/2)
     mediana = lista_ordenada[posicao_mediana]
     print(f'LISTA ORIGINAL: <{lista_ordenada}>')
-    print(f'A media dos valores sao: <{mediana}>')
+    print(f'A mediana dos valores sao: <{mediana}>')
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')

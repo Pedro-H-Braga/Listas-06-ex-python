@@ -7,16 +7,12 @@ statistics.py):
 c) A variância populacional dos valores dos elementos da lista
 
 '''
-from random import choice
-
+import random
 print('<<Informar a baixo numeros inteiros e positivos>>')
 dimensao = int(input('Informe a dimensao da lista: '))
 
-valores_randomicos = range(1,100)
-somatorio          = float(0)
-media              = float(0)
-repeticoes         = 0
-
+mediana            = 0
+posicao_mediana    = 0
 numero_randomicos  = []
 lista_ordenada     = []
 
@@ -24,14 +20,19 @@ lista_ordenada     = []
 if dimensao > 0:
     # laço que popula a lista com valores aleatorios
     for i in range(dimensao):
-        numero_randomicos.append(choice(valores_randomicos))
+        numero_randomicos.append(round(random.uniform(0.00, 99.99), 2))
 
-    for i in numero_randomicos:
-        somatorio += i
+    for numero in numero_randomicos:
+        for chave, valor in enumerate(lista_ordenada):
+            if numero < valor:
+                lista_ordenada.insert(chave, numero)
+                break
+        else:
+            lista_ordenada.append(numero)
     
-    media = somatorio/dimensao
-    
-    print(f'LISTA ORIGINAL: <{numero_randomicos}>')
-    print(f'A media dos valores sao: <{media}>')
+    posicao_mediana = int(dimensao/2)
+    mediana = lista_ordenada[posicao_mediana]
+    print(f'LISTA ORIGINAL: <{lista_ordenada}>')
+    print(f'A mediana dos valores sao: <{mediana}>')
 else: 
     print('<<VALOR INFORMADO É INVÁLIDO>>')
