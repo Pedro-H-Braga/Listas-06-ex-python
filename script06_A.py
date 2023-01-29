@@ -9,6 +9,7 @@ soma dos elementos / dimensao da lista
 
 '''
 from random import choice
+from statistics import mean
 
 print('<<Informar a baixo numeros inteiros e positivos>>')
 dimensao = int(input('Informe a dimensao da lista: '))
@@ -27,11 +28,7 @@ if dimensao > 0:
     for i in range(dimensao):
         numero_randomicos.append(choice(valores_randomicos))
 
-    for i in numero_randomicos:
-        somatorio += i
-    
-    media = somatorio/dimensao
-    
+    media = mean(numero_randomicos)
     print(f'LISTA ORIGINAL: <{numero_randomicos}>')
     print(f'A media dos valores sao: <{media}>')
 else: 
