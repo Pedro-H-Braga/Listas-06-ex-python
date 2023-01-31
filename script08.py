@@ -9,8 +9,9 @@ https://pt.stackoverflow.com/questions/367434/como-calculo-determinante-de-uma-m
 
 '''
 
-from random import choice
-from statistics import stdev
+from random import choices
+
+import numpy
 
 print('<<Informar a baixo numeros inteiros e positivos>>')
 dimensao = int(input('Informe a dimensao da lista: '))
@@ -21,6 +22,10 @@ desvio_padrao      = 0
 
 # condição para ser positivo e estar entre 0 a 9
 if dimensao > 0:
-    # laço que popula a lista com valores aleatorios floats
+    # laço que popula a lista com listas do tamanho de 'dimensao' com valores aleatorios 
     for i in range(dimensao):
-        numero_randomicos.append(choice(valores_randomicos))
+        numero_randomicos.append(choices(valores_randomicos, k=dimensao))
+    
+    print(numero_randomicos, end='\n')
+    determinante_matriz = numpy.linalg.det(numero_randomicos)
+    print(determinante_matriz)
