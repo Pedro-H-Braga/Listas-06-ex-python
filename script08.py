@@ -29,3 +29,5 @@ if dimensao > 0:
     print(numero_randomicos, end='\n')
     determinante_matriz = numpy.linalg.det(numero_randomicos)
     print(determinante_matriz)
+else: 
+    print('<<VALOR INFORMADO É INVÁLIDO>>')
